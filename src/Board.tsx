@@ -1,7 +1,6 @@
 import React from "react";
 import Square from "./Square";
-
-export type BoardValue = "X" | "O" | null;
+import BoardValue from "./BoardValue";
 
 interface BoardState {
   squares: BoardValue[];
