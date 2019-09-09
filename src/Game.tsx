@@ -1,7 +1,11 @@
 import React from "react";
 import Board from "./Board";
 
-class Game extends React.Component {
+interface GameProps {}
+
+interface GameState {}
+
+class Game extends React.Component<GameProps, GameState> {
   render() {
     return (
       <div className="game">
