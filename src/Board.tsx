@@ -18,8 +18,15 @@ class Board extends React.Component<BoardProps, BoardState> {
   }
 
   renderSquare(i: number) {
-    return <Square value={this.state.squares[i]} />;
+    return (
+      <Square
+        value={this.state.squares[i]}
+        onClick={() => this.handleClick(i)}
+      />
+    );
   }
+
+  handleClick(i: number) {}
 
   render() {
     const status = "Next player: X";
