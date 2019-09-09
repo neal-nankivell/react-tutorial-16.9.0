@@ -37,7 +37,7 @@ class Board extends React.Component<BoardProps, BoardState> {
     });
   }
 
-  calculateWinner(squares: number[]) {
+  calculateWinner(squares: BoardValue[]) {
     const lines = [
       [0, 1, 2],
       [3, 4, 5],
@@ -62,7 +62,13 @@ class Board extends React.Component<BoardProps, BoardState> {
   }
 
   render() {
-    const status = `Next player: ${this.state.xIsNext ? "X" : "O"}`;
+    const winner = this.calculateWinner(this.state.squares);
+    let status;
+    if (winner) {
+      status = `Winner: ${winner}`;
+    } else {
+      status = `Next player: ${this.state.xIsNext ? "X" : "O"}`;
+    }
 
     return (
       <div>
