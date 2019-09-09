@@ -3,7 +3,7 @@ interface SquareState {
   value: string | null;
 }
 interface SquareProps {
-  value: number;
+  value: string;
 }
 
 class Square extends React.Component<SquareProps, SquareState> {

@@ -16,7 +16,7 @@ class Board extends React.Component<BoardProps, BoardState> {
   }
 
   renderSquare(i: number) {
-    return <Square value={i} />;
+    return <Square value={this.state.squares[i]} />;
   }
 
   render() {
