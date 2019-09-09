@@ -1,8 +1,10 @@
 import React from "react";
 import Square from "./Square";
 
+export type BoardValue = "X" | "O" | null;
+
 interface BoardState {
-  squares: string[];
+  squares: BoardValue[];
 }
 
 interface BoardProps {}

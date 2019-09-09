@@ -1,9 +1,11 @@
 import React from "react";
+import { BoardValue } from "./Board";
+
 interface SquareState {
-  value: string | null;
+  value: BoardValue;
 }
 interface SquareProps {
-  value: string;
+  value: BoardValue;
 }
 
 class Square extends React.Component<SquareProps, SquareState> {
