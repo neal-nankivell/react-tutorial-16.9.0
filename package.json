@@ -34,6 +34,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-test-renderer": "^16.9.0",
     "react-test-renderer": "^16.9.0"
   }
 }
