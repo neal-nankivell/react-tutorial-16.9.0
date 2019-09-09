@@ -1,3 +1,5 @@
+_To get back up to speed with React I'm following the [tutorial](https://reactjs.org/tutorial/tutorial.html). I'll diverge a little from the tutorial by using typescript and yarn_
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
