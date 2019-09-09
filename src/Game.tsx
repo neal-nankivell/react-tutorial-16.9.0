@@ -7,6 +7,7 @@ interface GameProps {}
 
 interface GameState {
   history: BoardState[];
+  stepNumber: number;
 }
 
 class Game extends React.Component<GameProps, GameState> {
@@ -18,12 +19,13 @@ class Game extends React.Component<GameProps, GameState> {
           xIsNext: true,
           squares: Array(9).fill(null)
         }
-      ]
+      ],
+      stepNumber: 0
     };
   }
 
   handleClick(i: number) {
-    const history = this.state.history;
+    const history = this.state.history.slice(0, this.state.stepNumber + 1);
     const current = history[history.length - 1];
     const squares = current.squares.slice();
 
@@ -38,7 +40,8 @@ class Game extends React.Component<GameProps, GameState> {
           squares: squares,
           xIsNext: !current.xIsNext
         }
-      ])
+      ]),
+      stepNumber: history.length
     });
   }
 
@@ -66,9 +69,15 @@ class Game extends React.Component<GameProps, GameState> {
     return null;
   }
 
+  jumpTo(step: number) {
+    this.setState({
+      stepNumber: step
+    });
+  }
+
   render() {
     const history = this.state.history;
-    const current = history[history.length - 1];
+    const current = history[this.state.stepNumber];
     const winner = this.calculateWinner(current.squares);
 
     let status;
@@ -77,6 +86,16 @@ class Game extends React.Component<GameProps, GameState> {
     } else {
       status = `Next player: ${current.xIsNext ? "X" : "O"}`;
     }
+
+    const moves = history.map((step, move) => {
+      const desc = move ? `Go to move #${move}` : `Go to game start`;
+
+      return (
+        <li key={move}>
+          <button onClick={() => this.jumpTo(move)}>{desc}</button>
+        </li>
+      );
+    });
 
     return (
       <div className="game">
@@ -89,7 +108,7 @@ class Game extends React.Component<GameProps, GameState> {
         </div>
         <div className="game-info">
           <div>{status}</div>
-          <ol>{/* TODO */}</ol>
+          <ol>{moves}</ol>
         </div>
       </div>
     );
