@@ -1,7 +1,20 @@
 import React from "react";
 import Square from "./Square";
 
-class Board extends React.Component {
+interface BoardState {
+  squares: string[];
+}
+
+interface BoardProps {}
+
+class Board extends React.Component<BoardProps, BoardState> {
+  constructor(props: BoardProps) {
+    super(props);
+    this.state = {
+      squares: Array(9).fill(null)
+    };
+  }
+
   renderSquare(i: number) {
     return <Square value={i} />;
   }
