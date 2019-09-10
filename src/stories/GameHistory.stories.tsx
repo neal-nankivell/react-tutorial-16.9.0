@@ -3,15 +3,20 @@ import { action } from "@storybook/addon-actions";
 import { storiesOf } from "@storybook/react";
 import GameHistory from "../GameHistory";
 import React from "react";
-import { withKnobs, object } from "@storybook/addon-knobs/react";
+import { withKnobs, number } from "@storybook/addon-knobs/react";
 
 storiesOf("GameHistory", module)
   .addDecorator(withKnobs)
   .add("Initalized", () => (
     <GameHistory
-      history={object("History Items", [
-        { squares: Array(9).fill(null), xIsNext: true }
-      ])}
+      history={Array(
+        number("Turn Number", 5, {
+          range: true,
+          min: 1,
+          max: 9,
+          step: 1
+        })
+      ).fill({ squares: Array(9).fill(null), xIsNext: true })}
       onClick={action("onClick")}
     />
   ))
