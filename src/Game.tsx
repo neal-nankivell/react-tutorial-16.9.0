@@ -2,6 +2,7 @@ import React from "react";
 import Board from "./Board";
 import BoardState from "./BoardState";
 import calculateWinner from "./calculateWinner";
+import GameHistory from "./GameHistory";
 
 interface GameProps {}
 
@@ -63,16 +64,6 @@ class Game extends React.Component<GameProps, GameState> {
       status = `Next player: ${current.xIsNext ? "X" : "O"}`;
     }
 
-    const moves = history.map((step, move) => {
-      const desc = move ? `Go to move #${move}` : `Go to game start`;
-
-      return (
-        <li key={move}>
-          <button onClick={() => this.jumpTo(move)}>{desc}</button>
-        </li>
-      );
-    });
-
     return (
       <div className="game">
         <div className="game-board">
@@ -83,7 +74,10 @@ class Game extends React.Component<GameProps, GameState> {
         </div>
         <div className="game-info">
           <div>{status}</div>
-          <ol>{moves}</ol>
+          <GameHistory
+            history={this.state.history}
+            onClick={(step: number) => this.jumpTo(step)}
+          />
         </div>
       </div>
     );
