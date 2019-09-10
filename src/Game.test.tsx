@@ -3,6 +3,7 @@ import Game from "./Game";
 import { shallow, ShallowWrapper } from "enzyme";
 import Board from "./Board";
 import GameHistory from "./GameHistory";
+import GameStatus from "./GameStatus";
 
 describe("Game Tests", () => {
   let wrapper: ShallowWrapper<any, Readonly<{}>, React.Component<{}, {}, any>>;
@@ -32,5 +33,10 @@ describe("Game Tests", () => {
     expect(gameHistoy).toBeDefined();
     expect(gameHistoy.prop("history")).toBeDefined();
     expect(gameHistoy.prop("onClick")).toBeDefined();
+  });
+
+  it("Renders Game Status", () => {
+    const gameStatus = wrapper.find(GameStatus);
+    expect(gameStatus).toBeDefined();
   });
 });

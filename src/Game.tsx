@@ -3,6 +3,7 @@ import Board from "./Board";
 import BoardState from "./BoardState";
 import calculateWinner from "./calculateWinner";
 import GameHistory from "./GameHistory";
+import GameStatus from "./GameStatus";
 
 interface GameProps {}
 
@@ -73,7 +74,7 @@ class Game extends React.Component<GameProps, GameState> {
           />
         </div>
         <div className="game-info">
-          <div>{status}</div>
+          <GameStatus status={status} />
           <GameHistory
             history={this.state.history}
             onClick={(step: number) => this.jumpTo(step)}
