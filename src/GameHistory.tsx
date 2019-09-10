@@ -16,7 +16,7 @@ class GameHistory extends React.PureComponent<GameHistoryProps> {
         </li>
       );
     });
-    return moves;
+    return <ol style={{ listStyleType: 'none' }}>{moves}</ol>;
   }
 }
 
