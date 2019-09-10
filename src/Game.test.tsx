@@ -20,7 +20,6 @@ describe("Game Tests", () => {
     expect(boardComponent).toBeDefined();
     expect(boardComponent.prop("squares")).toEqual(Array(9).fill(null));
     expect(boardComponent.prop("onClick")).toBeDefined();
-    expect(boardComponent.prop("xIsNext")).toEqual(true);
   });
 
   it("Renders game info", () => {
