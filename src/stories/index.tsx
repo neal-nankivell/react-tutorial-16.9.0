@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../index.css";
 import { storiesOf } from "@storybook/react";
 import Square from "../Square";
 import Board from "../Board";
