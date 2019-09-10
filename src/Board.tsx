@@ -4,7 +4,6 @@ import BoardValue from "./BoardValue";
 
 interface BoardProps {
   squares: BoardValue[];
-  xIsNext: boolean;
   onClick: (index: number) => void;
 }
 

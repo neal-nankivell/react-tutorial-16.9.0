@@ -102,7 +102,6 @@ class Game extends React.Component<GameProps, GameState> {
         <div className="game-board">
           <Board
             squares={current.squares}
-            xIsNext={current.xIsNext}
             onClick={(i: number) => this.handleClick(i)}
           />
         </div>
