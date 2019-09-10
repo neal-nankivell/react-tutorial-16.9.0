@@ -1,11 +1,12 @@
-import React from "react";
 import "../index.css";
+import { action } from "@storybook/addon-actions";
 import { storiesOf } from "@storybook/react";
+import React from "react";
 import Square from "../Square";
 
 storiesOf("Square", module)
-  .add("Empty", () => <Square value={null} onClick={() => alert("Click!")} />)
-  .add("Player X", () => <Square value={"X"} onClick={() => alert("Click!")} />)
-  .add("Player O", () => (
-    <Square value={"O"} onClick={() => alert("Click!")} />
-  ));
+  .add("Empty", () => (
+    <Square value={null} onClick={action("Empty Clicked!")} />
+  ))
+  .add("Player X", () => <Square value={"X"} onClick={action("X Clicked!")} />)
+  .add("Player O", () => <Square value={"O"} onClick={action("O Clicked!")} />);
