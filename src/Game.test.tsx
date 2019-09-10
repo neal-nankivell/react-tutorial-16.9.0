@@ -2,6 +2,7 @@ import React from "react";
 import Game from "./Game";
 import { shallow, ShallowWrapper } from "enzyme";
 import Board from "./Board";
+import GameHistory from "./GameHistory";
 
 describe("Game Tests", () => {
   let wrapper: ShallowWrapper<any, Readonly<{}>, React.Component<{}, {}, any>>;
@@ -24,5 +25,12 @@ describe("Game Tests", () => {
 
   it("Renders game info", () => {
     expect(wrapper.find("game-info")).toBeDefined();
+  });
+
+  it("Renders Game History", () => {
+    const gameHistoy = wrapper.find(GameHistory);
+    expect(gameHistoy).toBeDefined();
+    expect(gameHistoy.prop("history")).toBeDefined();
+    expect(gameHistoy.prop("onClick")).toBeDefined();
   });
 });
