@@ -1,18 +1,9 @@
 import { GameAction, makeMove, jumpToTurn } from "../actions/gameActions";
 import { getType } from "typesafe-actions";
 import calculateWinner from "./calculateWinner";
-import { GameState } from "../state/AppState";
+import { GameState, initalAppState } from "../state/AppState";
 
-const initialState: GameState = Object.freeze({
-  history: [
-    {
-      xIsNext: true,
-      squares: Array(9).fill(null)
-    }
-  ],
-  stepNumber: 0,
-  winner: null
-});
+const initialState: GameState = initalAppState.game;
 
 const playMove = (
   state: GameState,

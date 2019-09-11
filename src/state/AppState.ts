@@ -11,6 +11,19 @@ export interface GameState {
   winner: BoardValue;
 }
 
+export const initalAppState: AppState = Object.freeze({
+  game: {
+    history: [
+      {
+        xIsNext: true,
+        squares: Array(9).fill(null)
+      }
+    ],
+    stepNumber: 0,
+    winner: null
+  }
+});
+
 export default interface AppState {
   game: GameState;
 }
