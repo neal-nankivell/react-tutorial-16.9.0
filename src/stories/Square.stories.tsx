@@ -1,11 +1,10 @@
-import "../index.css";
 import { action } from "@storybook/addon-actions";
 import { storiesOf } from "@storybook/react";
 import React from "react";
 import Square from "../Square";
 import { withKnobs, select } from "@storybook/addon-knobs/react";
 
-storiesOf("Square", module)
+storiesOf("Components|Square", module)
   .addDecorator(withKnobs)
   .add("Empty", () => (
     <Square

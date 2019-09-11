@@ -1,16 +1,15 @@
-import "../index.css";
 import { action } from "@storybook/addon-actions";
 import { storiesOf } from "@storybook/react";
 import GameHistory from "../GameHistory";
 import React from "react";
 import { withKnobs, number } from "@storybook/addon-knobs/react";
 
-storiesOf("GameHistory", module)
+storiesOf("Components|GameHistory", module)
   .addDecorator(withKnobs)
-  .add("Initalized", () => (
+  .add("New Game", () => (
     <GameHistory
       history={Array(
-        number("Turn Number", 5, {
+        number("Turn Number", 1, {
           range: true,
           min: 1,
           max: 9,
