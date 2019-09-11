@@ -1,4 +1,4 @@
-_To get back up to speed with React I'm following the [tutorial](https://reactjs.org/tutorial/tutorial.html). I'll diverge a little from the tutorial by using typescript and yarn_
+_To get back up to speed with React I'm following the [tutorial](https://reactjs.org/tutorial/tutorial.html). I'll diverge a little from the tutorial by using typescript and yarn. Get started with a `yarn install`_
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -6,7 +6,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `npm start`
+### `yarn storybook`
+
+Runs [Storybook](https://storybook.js.org/) this allows you to view and develop each component in isolation.
+This also has a full working demo of the Tic Tac Toe game in it.
+
+### `yarn start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -14,12 +19,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
-### `npm test`
+### `yarn test`
 
 Launches the test runner in the interactive watch mode.<br>
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### `yarn run build`
 
 Builds the app for production to the `build` folder.<br>
 It correctly bundles React in production mode and optimizes the build for the best performance.
