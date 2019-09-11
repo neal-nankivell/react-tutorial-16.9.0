@@ -1,6 +1,6 @@
 import { action } from "@storybook/addon-actions";
 import { storiesOf } from "@storybook/react";
-import GameHistory from "../GameHistory";
+import GameHistory from "../components/GameHistory";
 import React from "react";
 import { withKnobs, number } from "@storybook/addon-knobs/react";
 

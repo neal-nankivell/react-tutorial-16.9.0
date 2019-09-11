@@ -1,5 +1,5 @@
 import React from "react";
-import BoardState from "./BoardState";
+import { BoardState } from "../state/AppState";
 
 interface GameHistoryProps {
   history: BoardState[];
@@ -16,7 +16,7 @@ class GameHistory extends React.PureComponent<GameHistoryProps> {
         </li>
       );
     });
-    return <ol style={{ listStyleType: 'none' }}>{moves}</ol>;
+    return <ol style={{ listStyleType: "none" }}>{moves}</ol>;
   }
 }
 

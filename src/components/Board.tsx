@@ -1,6 +1,6 @@
 import React from "react";
 import Square from "./Square";
-import BoardValue from "./BoardValue";
+import { BoardValue } from "../state/AppState";
 
 interface BoardProps {
   squares: BoardValue[];

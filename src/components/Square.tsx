@@ -1,5 +1,5 @@
 import React from "react";
-import BoardValue from "./BoardValue";
+import { BoardValue } from "../state/AppState";
 
 interface SquareProps {
   value: BoardValue;

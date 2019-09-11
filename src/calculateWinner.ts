@@ -1,4 +1,4 @@
-import BoardValue from "./BoardValue";
+import { BoardValue } from "./state/AppState";
 
 export default function calculateWinner(squares: BoardValue[]): BoardValue {
   const lines = [

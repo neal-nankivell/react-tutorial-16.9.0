@@ -1,5 +1,5 @@
 import calculateWinner from "./calculateWinner";
-import BoardValue from "./BoardValue";
+import { BoardValue } from "./state/AppState";
 
 describe("calculateWinner Tests", () => {
   describe.each([

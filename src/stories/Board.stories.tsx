@@ -1,6 +1,6 @@
 import { action } from "@storybook/addon-actions";
 import { storiesOf } from "@storybook/react";
-import Board from "../Board";
+import Board from "../components/Board";
 import React from "react";
 import { withKnobs, array } from "@storybook/addon-knobs/react";
 

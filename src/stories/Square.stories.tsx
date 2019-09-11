@@ -1,7 +1,7 @@
 import { action } from "@storybook/addon-actions";
 import { storiesOf } from "@storybook/react";
 import React from "react";
-import Square from "../Square";
+import Square from "../components/Square";
 import { withKnobs, select } from "@storybook/addon-knobs/react";
 
 storiesOf("Components|Square", module)
