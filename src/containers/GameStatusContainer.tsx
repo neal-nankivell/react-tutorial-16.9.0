@@ -4,11 +4,8 @@ import AppState from "../state/AppState";
 import GameStatus from "../components/GameStatus";
 
 const mapStateToProps = (state: AppState) => ({
-  status: state.game.winner
-    ? `Player ${state.game.winner} Wins!`
-    : `Next player: ${
-        state.game.history[state.game.stepNumber].xIsNext ? "X" : "O"
-      }`
+  xIsNext: state.game.history[state.game.stepNumber].xIsNext,
+  winner: state.game.winner
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<Action<any>>) => ({});
