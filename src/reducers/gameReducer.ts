@@ -1,6 +1,6 @@
 import { GameAction, makeMove, jumpToTurn } from "../actions/gameActions";
 import { getType } from "typesafe-actions";
-import calculateWinner from "../calculateWinner";
+import calculateWinner from "./calculateWinner";
 import { GameState } from "../state/AppState";
 
 const initialState: GameState = Object.freeze({
