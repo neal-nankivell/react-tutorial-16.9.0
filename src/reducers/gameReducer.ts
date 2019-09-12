@@ -1,9 +1,10 @@
 import { GameAction, makeMove, jumpToTurn } from "../actions/gameActions";
 import { getType } from "typesafe-actions";
 import calculateWinner from "./calculateWinner";
-import { GameState, initalAppState } from "../state/AppState";
+import { GameState } from "../state/AppState";
+import InitialAppState from "../state/InitialAppState";
 
-const initialState: GameState = initalAppState.game;
+const initialState: GameState = InitialAppState.game;
 
 const playMove = (
   state: GameState,

@@ -1,12 +1,12 @@
 import { mapStateToProps, mapDispatchToProps } from "./GameHistoryContainer";
-import { initalAppState } from "../state/AppState";
 import { jumpToTurn } from "../actions/gameActions";
+import InitialAppState from "../state/InitialAppState";
 
 describe("GameHistoryContainer Tests", () => {
   it("mapStateToProps uses game history", () => {
-    const appState = initalAppState;
+    const appState = InitialAppState;
     expect(mapStateToProps(appState).history).toStrictEqual(
-      initalAppState.game.history
+      InitialAppState.game.history
     );
   });
 

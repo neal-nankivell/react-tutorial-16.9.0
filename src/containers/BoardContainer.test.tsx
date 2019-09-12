@@ -1,12 +1,12 @@
 import { mapStateToProps, mapDispatchToProps } from "./BoardContainer";
-import { initalAppState } from "../state/AppState";
 import { makeMove } from "../actions/gameActions";
+import InitialAppState from "../state/InitialAppState";
 
 describe("BoardContainer Tests", () => {
   it("mapStateToProps uses squares from current history", () => {
-    const appState = initalAppState;
+    const appState = InitialAppState;
     expect(mapStateToProps(appState).squares).toStrictEqual(
-      initalAppState.game.history[0].squares
+      InitialAppState.game.history[0].squares
     );
   });
 

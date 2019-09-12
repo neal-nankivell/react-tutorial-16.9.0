@@ -1,9 +1,9 @@
 import { mapStateToProps } from "./GameStatusContainer";
-import { initalAppState } from "../state/AppState";
+import InitialAppState from "../state/InitialAppState";
 
 describe("GameStatusContainer Tests", () => {
   it("mapStateToProps uses game history", () => {
-    const appState = initalAppState;
+    const appState = InitialAppState;
     const props = mapStateToProps(appState);
     expect(props.xIsNext).toStrictEqual(
       appState.game.history[appState.game.stepNumber].xIsNext

@@ -1,13 +1,14 @@
-import { GameState, initalAppState, BoardValue } from "../state/AppState";
+import { GameState, BoardValue } from "../state/AppState";
 import gameReducer from "./gameReducer";
 import { makeMove } from "../actions/gameActions";
+import InitialAppState from "../state/InitialAppState";
 
 const getSquares = (state: GameState) =>
   state.history[state.stepNumber].squares;
 
 describe("gameReducer Tests", () => {
   it("Alternates players on playMove", () => {
-    const initialState: GameState = initalAppState.game;
+    const initialState: GameState = InitialAppState.game;
 
     const sut = gameReducer;
     const moves = [0, 1, 2, 3, 4, 8, 7, 6, 5];
@@ -35,7 +36,7 @@ describe.each([[[0, 1, 3, 4, 6], "X"], [[4, 0, 5, 3, 1, 6], "O"]])(
       let input: number[] = moves as number[];
       let expectedOutput: BoardValue = winner as BoardValue;
 
-      let currentState = initalAppState.game;
+      let currentState = InitialAppState.game;
 
       for (var i = 0; i < input.length; i++) {
         currentState = sut(currentState, makeMove(input[i]));
