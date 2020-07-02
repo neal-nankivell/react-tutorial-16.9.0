@@ -2,7 +2,7 @@ import { action } from "@storybook/addon-actions";
 import { storiesOf } from "@storybook/react";
 import GameHistory from "../components/GameHistory";
 import React from "react";
-import { withKnobs, number } from "@storybook/addon-knobs/react";
+import { withKnobs, number } from "@storybook/addon-knobs";
 
 storiesOf("Components|GameHistory", module)
   .addDecorator(withKnobs)
@@ -13,7 +13,7 @@ storiesOf("Components|GameHistory", module)
           range: true,
           min: 1,
           max: 9,
-          step: 1
+          step: 1,
         })
       ).fill({ squares: Array(9).fill(null), xIsNext: true })}
       onClick={action("onClick")}
@@ -23,7 +23,7 @@ storiesOf("Components|GameHistory", module)
     <GameHistory
       history={[
         { squares: Array(9).fill(null), xIsNext: true },
-        { squares: Array(9).fill(null), xIsNext: false }
+        { squares: Array(9).fill(null), xIsNext: false },
       ]}
       onClick={action("onClick")}
     />

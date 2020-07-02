@@ -1,7 +1,7 @@
 import { storiesOf } from "@storybook/react";
 import React from "react";
 import GameStatus from "../components/GameStatus";
-import { withKnobs, select } from "@storybook/addon-knobs/react";
+import { withKnobs, select } from "@storybook/addon-knobs";
 
 storiesOf("Components|GameStatus", module)
   .addDecorator(withKnobs)
@@ -12,15 +12,20 @@ storiesOf("Components|GameStatus", module)
         {
           "Game in progress (No winner yet)": null,
           "Player X": "X",
-          "Player O": "O"
+          "Player O": "O",
         },
         null
       )}
-      xIsNext={select(
-        "Current Turn",
-        { "Player X": true, "Player O": false },
-        true
-      )}
+      xIsNext={
+        select(
+          "Current Turn",
+          {
+            "Player X": "true",
+            "Player O": "false",
+          },
+          "true"
+        ) === "true"
+      }
     />
   ))
   .add("Player O Turn", () => (
@@ -30,15 +35,17 @@ storiesOf("Components|GameStatus", module)
         {
           "Game in progress (No winner yet)": null,
           "Player X": "X",
-          "Player O": "O"
+          "Player O": "O",
         },
         null
       )}
-      xIsNext={select(
-        "Current Turn",
-        { "Player X": true, "Player O": false },
-        false
-      )}
+      xIsNext={
+        select(
+          "Current Turn",
+          { "Player X": "true", "Player O": "false" },
+          "false"
+        ) === "true"
+      }
     />
   ))
   .add("Player O Win", () => (
@@ -48,15 +55,17 @@ storiesOf("Components|GameStatus", module)
         {
           "Game in progress (No winner yet)": null,
           "Player X": "X",
-          "Player O": "O"
+          "Player O": "O",
         },
         "O"
       )}
-      xIsNext={select(
-        "Current Turn",
-        { "Player X": true, "Player O": false },
-        false
-      )}
+      xIsNext={
+        select(
+          "Current Turn",
+          { "Player X": "true", "Player O": "false" },
+          "false"
+        ) === "true"
+      }
     />
   ))
   .add("Player X Win", () => (
@@ -66,14 +75,16 @@ storiesOf("Components|GameStatus", module)
         {
           "Game in progress (No winner yet)": null,
           "Player X": "X",
-          "Player O": "O"
+          "Player O": "O",
         },
         "X"
       )}
-      xIsNext={select(
-        "Current Turn",
-        { "Player X": true, "Player O": false },
-        false
-      )}
+      xIsNext={
+        select(
+          "Current Turn",
+          { "Player X": "true", "Player O": "false" },
+          "false"
+        ) === "true"
+      }
     />
   ));
