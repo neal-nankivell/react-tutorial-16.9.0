@@ -1,6 +1,8 @@
 _To get back up to speed with React I'm following the [tutorial](https://reactjs.org/tutorial/tutorial.html). I'll diverge a little from the tutorial by using typescript and yarn. Get started with a `yarn install`_
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Build Status
+![build-test](https://github.com/neal-nankivell/react-tutorial-16.9.0/workflows/build-test/badge.svg)
 
 ## Available Scripts
 
