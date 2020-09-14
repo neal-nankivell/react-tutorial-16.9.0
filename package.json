@@ -59,7 +59,7 @@
     "@types/storybook__react": "^5.2.1",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.3",
-    "prettier": "2.0.5",
+    "prettier": "2.1.1",
     "react-test-renderer": "^16.9.0"
   }
 }
